@@ -1,9 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
-import About from "./About";
-import Callback from "./Callback";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import reportWebVitals from "./reportWebVitals";
@@ -16,8 +13,6 @@ root.render(
   <BrowserRouter>
     <Routes>
       <Route path="/" element={<App />} />
-      <Route path="/about" element={<About />} />
-      <Route path="/callback" element={<Callback />} />
       <Route path="/login" element={<Login />} />
       <Route path="/signup" element={<Signup />} />
     </Routes>
