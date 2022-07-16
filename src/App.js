@@ -1,25 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import { Button } from "reactstrap";
 
 function App() {
+  let tampilkanPesan = (e) => {
+    alert("Anda Logout");
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <button onClick={tampilkanPesan}>Logout</button>
+      <Button onClick={tampilkanPesan}>Logout</Button>
     </div>
   );
 }
-
 export default App;
