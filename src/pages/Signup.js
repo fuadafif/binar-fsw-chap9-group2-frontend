@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 // import file Bootstrap
 // import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
@@ -11,7 +12,7 @@ function Form() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const register = () => {
+  const register = (req, res) => {
     axios
       .post("http://localhost:4000/register", {
         email: email,
@@ -22,6 +23,10 @@ function Form() {
       });
   };
 
+  // inisiasi navigasi / redirect
+  const navigate = useNavigate();
+
+
   // fungsi event
   function submit(event) {
     event.preventDefault();
@@ -29,7 +34,15 @@ function Form() {
     setUsername(document.getElementById("username").value);
     setEmail(document.getElementById("email").value);
     setPassword(document.getElementById("password").value);
+
+    // navigasi
+    if (event) {
+      alert('Data berhasil ditambahkan');
+      navigate('/login');
+    }
   }
+
+
   return (
     <div>
       <h1>Sign up</h1>
