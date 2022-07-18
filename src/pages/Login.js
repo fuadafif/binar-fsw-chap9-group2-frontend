@@ -10,24 +10,26 @@ function Form() {
   const [tampil, setTampil] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
-  const login = () => {
-    axios
-      .post("http://localhost:4000/login", {
-        email: email,
-        password: password,
-      })
-      .then((result) => {
-        console.log(result);
-      });
-  };
-
+  const navigate = useNavigate();
   // fungsi event
-  function submit(event) {
+  async function submit(event) {
     event.preventDefault();
     setTampil(true);
     setEmail(document.getElementById("email").value);
     setPassword(document.getElementById("password").value);
+
+
+    try {
+      const result = await axios.post("http://localhost:4000/login", {
+        email: email,
+        password: password
+      });
+      alert(result.data.message);
+      navigate('/home');
+
+    } catch (err) {
+      alert("Email atau Password salah! Cek kembali!");
+    }
   }
 
   return (
@@ -63,7 +65,7 @@ function Form() {
         </label>
 
         <p>Forget password?</p>
-        <button type="submit" onClick={login}>
+        <button type="submit">
           Login
         </button>
       </form>
