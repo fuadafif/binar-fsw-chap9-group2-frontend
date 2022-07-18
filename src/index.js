@@ -9,6 +9,7 @@ import Signup from "./pages/Signup";
 import Home from "./pages/Home";
 import Profile from './pages/Profile'
 import GameList from "./pages/GameList";
+import RockPaperScissors from './pages/RockPaperScissors';
 import PageNotFound from "./pages/PageNotFound";
 
 import reportWebVitals from "./reportWebVitals";
@@ -27,6 +28,7 @@ root.render(
       <Route path="/profile" element={<Profile />} />
       <Route path="/gameList" element={<GameList />} />
       <Route path="*" element={<PageNotFound />} />
+      <Route path="/rock-paper-scissors" element={<RockPaperScissors />} />
     </Routes>
   </BrowserRouter>
 );
