@@ -1,12 +1,13 @@
-import { useState } from "react";
+import React from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate as navigate } from "react-router-dom";
+import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
-// import file Bootstrap
-// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./signup-assets/css/Signup.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-// fungsi dari form
-function Form() {
+function Signup() {
   const [tampil, setTampil] = useState(false);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -15,19 +16,16 @@ function Form() {
   const register = (req, res) => {
     axios
       .post("http://localhost:4000/register", {
+        username: username,
         email: email,
         password: password,
       })
+
       .then((result) => {
         console.log(result);
       });
   };
 
-  // inisiasi navigasi / redirect
-  const navigate = useNavigate();
-
-
-  // fungsi event
   function submit(event) {
     event.preventDefault();
     setTampil(true);
@@ -35,69 +33,64 @@ function Form() {
     setEmail(document.getElementById("email").value);
     setPassword(document.getElementById("password").value);
 
-    // navigasi
     if (event) {
-      alert('Data berhasil ditambahkan');
-      navigate('/login');
+      alert("Register successful");
+      navigate("/login");
     }
   }
 
-
   return (
-    <div>
-      <h1>Sign up</h1>
-      <form onSubmit={submit}>
-        <label for="username">
-          Username
-          <input
-            type="text"
+    <div className="Form">
+      <h1>SIGN UP</h1>
+      <Form inline>
+        <FormGroup onSubmit={submit}>
+          <Label for="username" hidden>
+            Username
+          </Label>
+          <Input
             onChange={(event) => {
               setUsername(event.target.value);
             }}
+            type="text"
             id="username"
             name="username"
             placeholder="Enter a Username"
           />
-        </label>
-
-        <br />
-
-        <label for="email">
-          E-mail
-          <input
-            type="text"
+        </FormGroup>{" "}
+        <FormGroup>
+          <Label for="email" hidden>
+            E-mail
+          </Label>
+          <Input
             onChange={(event) => {
               setEmail(event.target.value);
             }}
+            type="text"
             id="email"
             name="email"
             placeholder="Enter your e-mail address"
           />
-        </label>
-
-        <br />
-
-        <label for="password">
-          Password
-          <input
-            type="password"
+        </FormGroup>{" "}
+        <FormGroup>
+          <Label for="password" hidden>
+            Password
+          </Label>
+          <Input
             onChange={(event) => {
               setPassword(event.target.value);
             }}
+            type="password"
             id="password"
             name="password"
             placeholder="Enter your Password"
           />
-        </label>
-
-        <br />
-
-        <button type="submit" onClick={register}>
+        </FormGroup>{" "}
+        <Button type="submit" onClick={register}>
           Create Account
-        </button>
-      </form>
+        </Button>
+      </Form>
     </div>
   );
 }
 
-export default Form;
+export default Signup;
