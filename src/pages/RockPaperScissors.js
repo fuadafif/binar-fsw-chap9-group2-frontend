@@ -5,6 +5,8 @@ import gunting from './game-assets/img/gunting.png';
 import kertas from './game-assets/img/kertas.png';
 import logo from './game-assets/img/logo.png';
 import refresh from './game-assets/img/refresh.png';
+import React from 'react';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Table } from 'reactstrap';
 
 function RockPaperScissors() {
 
@@ -166,7 +168,7 @@ function RockPaperScissors() {
     function paper() {
         game.playGame("paper");
     }
-    
+
     function scissor() {
         game.playGame("scissor");
     }
@@ -176,6 +178,9 @@ function RockPaperScissors() {
         game.resetBackground();
     }
 
+    const [modal, setModal] = React.useState(false);
+    const toggle = () => setModal(!modal);
+
     return (
         <div className='body'>
             <div className="container-fluid mt-3">
@@ -183,7 +188,7 @@ function RockPaperScissors() {
                 <div className="row align-items-center">
 
                     <div className="col-1 fs-1 fw-bolder text-end custom-back-button">
-                        <a href="/" className="text-reset text-decoration-none">
+                        <a href="/home" className="text-reset text-decoration-none">
                             &lt;
                         </a>
                     </div>
@@ -196,6 +201,48 @@ function RockPaperScissors() {
                         ROCK PAPER SCISSOR
                     </div>
 
+                    {/* MODAL */}
+                    <div style={{
+                        display: 'block', width: 700, padding: 30
+                    }}>
+                        <Button color="danger"
+                            onClick={toggle}>Leaderboard</Button>
+                        <Modal isOpen={modal} toggle={toggle}>
+                            <ModalHeader
+                                toggle={toggle}>Top Score</ModalHeader>
+                            <ModalBody>
+                                <Table>
+                                    <thead>
+                                        <tr>
+                                            <th>No.</th>
+                                            <th>Username</th>
+                                            <th>Score</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                    </tbody>
+                                </Table>
+                            </ModalBody>
+                            <ModalFooter>
+                                <Button color="primary" onClick={toggle}>Okay</Button>
+                            </ModalFooter>
+                        </Modal>
+                    </div >
                 </div>
             </div>
 
@@ -249,7 +296,7 @@ function RockPaperScissors() {
 
                 <div className="row my-5 justify-content-center align-items-center">
 
-                    <div className="col-2 custom-choice-background" id="player-scissor"  onClick={scissor}>
+                    <div className="col-2 custom-choice-background" id="player-scissor" onClick={scissor}>
                         <img className="custom-choice" src={gunting} alt="player-scissor" />
                     </div>
 
