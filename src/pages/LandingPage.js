@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Card, CardImg, Container, Col, Row } from "reactstrap";
 import Carousel from "../carousel";
+import LandingNav from "../components/navbar/LandingNav";
 
 function LandingPage() {
   return (
     <>
+      <LandingNav />
       {/* CardImg */}
       <Card className="my-2">
         <CardImg
