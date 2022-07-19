@@ -79,3 +79,11 @@
   background-color: #C4C4C4;
   border-radius: 10%;
 }
+
+
+.play-game {
+  background-image: url('../img/background-1.jpg');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+}
