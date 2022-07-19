@@ -1,75 +1,70 @@
-import { useState } from "react";
+import React from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { useState } from "react";
+import { useNavigate as navigate } from "react-router-dom";
+import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
-// import file Bootstrap
-// import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "./login-assets/css/Login.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
-// fungsi dari form
-function Form() {
+function Login() {
   const [tampil, setTampil] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate();
-  // fungsi event
+
   async function submit(event) {
     event.preventDefault();
     setTampil(true);
     setEmail(document.getElementById("email").value);
     setPassword(document.getElementById("password").value);
 
-
     try {
       const result = await axios.post("http://localhost:4000/login", {
         email: email,
-        password: password
+        password: password,
       });
       alert(result.data.message);
-      navigate('/home');
-
+      navigate("/home");
     } catch (err) {
-      alert("Email atau Password salah! Cek kembali!");
+      alert("E-mail atau Password salah! Silakan cek kembali!");
     }
   }
 
   return (
-    <div>
-      <h1>Login</h1>
-      <form onSubmit={submit}>
-        <label for="username">
-          Email
-          <input
-            type="text"
+    <div className="Form">
+      <h1>LOGIN</h1>
+      <Form inline>
+        <FormGroup onSubmit={submit}>
+          <Label for="email" hidden>
+            E-mail
+          </Label>
+          <Input
             onChange={(event) => {
               setEmail(event.target.value);
             }}
+            type="text"
             id="email"
             name="email"
-            placeholder="Email"
+            placeholder="Enter your e-mail address"
           />
-        </label>
-
-        <br />
-
-        <label for="password">
-          Password
-          <input
-            type="password"
+        </FormGroup>{" "}
+        <FormGroup>
+          <Label for="password" hidden>
+            Password
+          </Label>
+          <Input
             onChange={(event) => {
               setPassword(event.target.value);
             }}
+            type="password"
             id="password"
             name="password"
-            placeholder="Password"
+            placeholder="Enter your Password"
           />
-        </label>
-
+        </FormGroup>{" "}
         <p>Forget password?</p>
-        <button type="submit">
-          Login
-        </button>
-      </form>
-
+        <Button type="submit">Login</Button>
+      </Form>
       <p>
         {tampil && (
           <>
@@ -85,4 +80,4 @@ function Form() {
   );
 }
 
-export default Form;
+export default Login;
