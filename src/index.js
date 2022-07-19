@@ -4,12 +4,13 @@ import "./index.css";
 
 import LandingPage from "./pages/LandingPage";
 import Login from "./pages/Login";
-import Signup from "./pages/Signup";
+import Signup from "./pages/Register";
 import Home from "./pages/Home";
 import Profile from './pages/Profile'
 import GameList from "./pages/GameList";
 import RockPaperScissors from './pages/RockPaperScissors';
 import PageNotFound from "./pages/PageNotFound";
+import PlayGame from "./pages/PlayGame";
 
 import reportWebVitals from "./reportWebVitals";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -21,12 +22,13 @@ root.render(
     <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
+      <Route path="/register" element={<Signup />} />
       <Route path="/home" element={<Home />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/gameList" element={<GameList />} />
       <Route path="*" element={<PageNotFound />} />
       <Route path="/rock-paper-scissors" element={<RockPaperScissors />} />
+      <Route path="/play-game" element={<PlayGame />} />
     </Routes>
   </BrowserRouter>
 );

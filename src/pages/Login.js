@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate as navigate } from "react-router-dom";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { useNavigate } from "react-router-dom";
 
 import "./login-assets/css/Login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -11,6 +11,7 @@ function Login() {
   const [tampil, setTampil] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   async function submit(event) {
     event.preventDefault();
@@ -24,7 +25,7 @@ function Login() {
         password: password,
       });
       alert(result.data.message);
-      navigate("/home");
+      navigate('/home');
     } catch (err) {
       alert("E-mail atau Password salah! Silakan cek kembali!");
     }
@@ -33,8 +34,8 @@ function Login() {
   return (
     <div className="Form">
       <h1>LOGIN</h1>
-      <Form inline>
-        <FormGroup onSubmit={submit}>
+      <Form inline  onSubmit={submit}>
+        <FormGroup>
           <Label for="email" hidden>
             E-mail
           </Label>
