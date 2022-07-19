@@ -188,7 +188,7 @@ function RockPaperScissors() {
                 <div className="row align-items-center">
 
                     <div className="col-1 fs-1 fw-bolder text-end custom-back-button">
-                        <a href="/home" className="text-reset text-decoration-none">
+                        <a href="/play-game" className="text-reset text-decoration-none">
                             &lt;
                         </a>
                     </div>
