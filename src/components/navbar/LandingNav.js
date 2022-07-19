@@ -27,7 +27,7 @@ function LandingNav() {
 						<NavLink
 							href="#"
 							onClick={() => {
-								navigate("/signup");
+								navigate("/register");
 							}}
 							activeStyle >
 							Register

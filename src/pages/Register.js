@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate as navigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
 import "./signup-assets/css/Signup.css";
@@ -12,6 +12,7 @@ function Signup() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const register = (req, res) => {
     axios
@@ -42,8 +43,8 @@ function Signup() {
   return (
     <div className="Form">
       <h1>SIGN UP</h1>
-      <Form inline>
-        <FormGroup onSubmit={submit}>
+      <Form inline onSubmit={submit}>
+        <FormGroup>
           <Label for="username" hidden>
             Username
           </Label>
