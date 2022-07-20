@@ -87,12 +87,10 @@ function Register() {
               placeholder="Enter your Password"
             />
           </FormGroup>{" "}
-          <Button color="primary" type="submit" onClick={register}>
+          <Button type="submit" onClick={register}>
             Create Account
           </Button>
         </Form>
-        <br />
-        <a href="/login">Already have an account?</a>
       </div>
     </div>
   );
