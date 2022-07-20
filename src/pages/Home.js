@@ -22,7 +22,7 @@ function Home() {
       <div className="container-games">
         <div className="col game">
           <div className="card">
-            <img src="/rock-paper-scissors.png" className="card-img-top" alt="rock paper scissor" />
+            <img src="/rock-paper-scissors.png" className="card-img-top img-game" alt="rock paper scissor" />
             <div className="card-body">
               <h5 className="card-title">Rock Paper Scissor</h5>
               <p className="card-text">Rock-Paper-Scissors is a two-person hand game. This game is often used for random selection. The players choose one {`(eg, "Rock! Paper! Scissors!")`}. </p>
@@ -34,8 +34,8 @@ function Home() {
         </div>
 
         <div className="col game">
-          <div className="card ">
-            <img src="/snake-game.webp" className="card-img-top" alt="snake" />
+          <div className="card">
+            <img src="/snake-game.webp" className="card-img-top img-game" alt="snake" />
             <div className="card-body">
               <h5 className="card-title">Snake</h5>
               <p className="card-text">
