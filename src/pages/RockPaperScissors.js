@@ -6,9 +6,20 @@ import kertas from './game-assets/img/kertas.png';
 import logo from './game-assets/img/logo.png';
 import refresh from './game-assets/img/refresh.png';
 import React from 'react';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter, Table } from 'reactstrap';
 
 function RockPaperScissors() {
+    
+    const navigate = useNavigate();
+    useEffect(() => {
+        const isAuthenticated = localStorage.getItem('isAuthenticated');
+        if (!isAuthenticated) {
+            navigate('/login');
+        }
+    });
+
 
     class Game {
 
@@ -188,7 +199,7 @@ function RockPaperScissors() {
                 <div className="row align-items-center">
 
                     <div className="col-1 fs-1 fw-bolder text-end custom-back-button">
-                        <a href="/play-game" className="text-reset text-decoration-none">
+                        <a href='/play-game' className="text-reset text-decoration-none">
                             &lt;
                         </a>
                     </div>
