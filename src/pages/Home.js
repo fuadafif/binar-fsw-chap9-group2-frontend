@@ -41,7 +41,7 @@ function Home() {
               <p className="card-text">
                 The player controls a long, thin creature, resembling a snake, which roams around on a bordered plane, picking up food (or some other item), trying to avoid hitting its own tail or the edges of the playing area.{" "}
               </p>
-              <a href="#" class="btn btn-primary">
+              <a href="/home" class="btn btn-primary">
                 Play Now
               </a>
             </div>
