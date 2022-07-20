@@ -1,35 +1,38 @@
 import React, { useState } from "react";
 import { Navbar, NavbarBrand, Nav, NavLink, NavItem } from "reactstrap";
 import { useNavigate } from "react-router-dom";
-
+import "./LandingNav.css"
 
 function LandingNav() {
 	let navigate = useNavigate();
 	return (
 		<>
 			{/* Navbar */}
-			<Navbar className="my-2" color="dark" dark>
+			<Navbar className="" color="dark" dark="true">
 				{/* NavBrand */}
 				<NavbarBrand href="/">
 					<img
 						alt="logo"
-						src="../logo"
+						src="gaming.jpg"
 						style={{
-							height: 40,
-							width: 40,
+							height: 50,
+							width: 50,
+							padding: 6,
+							marginRight: 6,
 						}}
 					/>
-					FSW-CHAP9-GROUP2
+					Team T2
 				</NavbarBrand>
 				{/* Nav */}
-				<Nav pills>
+				<Nav>
 					<NavItem>
 						<NavLink
 							href="#"
 							onClick={() => {
 								navigate("/register");
 							}}
-							activeStyle >
+							activeStyle
+						>
 							Register
 						</NavLink>
 					</NavItem>
@@ -39,7 +42,8 @@ function LandingNav() {
 							onClick={() => {
 								navigate("/login");
 							}}
-							activeStyle >
+							activeStyle
+						>
 							Login
 						</NavLink>
 					</NavItem>

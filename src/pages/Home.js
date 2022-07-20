@@ -1,14 +1,13 @@
 // import { Img } from "reactstrap";
 
-import LandingNav from "../components/navbar/HomeNav";
-
+import HomeNav from "../components/navbar/HomeNav"
 import "./home-assets/css/Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
   return (
     <div>
-      <LandingNav />
+      <HomeNav />
       <img src="./home-assets/img/player.png" alt="profile picture"></img>
       <h5>Username</h5>
 

@@ -2,43 +2,104 @@ import React, { useState } from "react";
 import { Card, CardImg, Container, Col, Row } from "reactstrap";
 import Carousel from "../carousel";
 import LandingNav from "../components/navbar/LandingNav";
+import "./landing-assets/css/Landing.css"
+import './game-assets/css/bootstrap.min.css';
+import fornite from "./landing-assets/img/fornite.jpg"
+
+
 
 function LandingPage() {
   return (
     <>
-      <LandingNav />
-      {/* CardImg */}
-      <Card className="my-2">
-        <CardImg
-          alt="Card image cap"
-          src="https://picsum.photos/id/1025/1200/400"
-          style={{
-            height: 180,
-          }}
-          top
-          width="100%"
-        />
-      </Card>
-      {/* Title Tengah */}
-      <Container className="bg-light border text-center" fluid="sm">
-        <h1>Lorem Ipsum</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam maecenas ultricies mi eget mauris pharetra et ultrices. Maecenas ultricies mi eget mauris
-          pharetra.
-        </p>
-      </Container>
-      {/* Carousel */}
-      <Row>
-        <Col className="bg-light border" xs="4">
-          <Container className="bg-light border text-left" fluid="sm">
-            <h1>Lorem Ipsum</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </Container>
-        </Col>
-        <Col className="bg-light border" xs="8">
-          <Container>{<Carousel />}</Container>
-        </Col>
-      </Row>
+      <div>
+        <LandingNav />
+        {/* CardImg */}
+        <Card className="header1">
+          <CardImg
+            src={fornite}
+            alt="Card image cap"
+            top
+            width="20%"
+          />
+        </Card>
+      </div>
+      <div className="main">
+        <div className="content-2-4 container-xxl mx-auto p-0 position-relative ">
+          <div className="text-center title-text">
+            <h1 className="text-title text-white">3 Keys Benefit</h1>
+            <p className="text-caption">
+              You can easily manage your business with a powerful tools
+            </p>
+          </div>
+
+          <div className="grid-padding text-center">
+            <div className="row">
+              <div className="col-lg-4 column">
+                <div className="icon">
+                  <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-11.png"
+                    alt=""
+                    width="50" />
+                </div>
+                <h3 className="icon-title text-white">Easy to Operate</h3>
+                <p className="icon-caption">
+                  This can easily help you to<br />
+                  grow up your business fast
+                </p>
+              </div>
+              <div className="col-lg-4 column">
+                <div className="icon">
+                  <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-12.png"
+                    alt="" />
+                </div>
+                <h3 className="icon-title text-white">Real-Time Analytic</h3>
+                <p className="icon-caption">
+                  With real-time analytics, you<br />
+                  can check data in real time
+                </p>
+              </div>
+              <div className="col-lg-4 column">
+                <div className="icon">
+                  <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-13.png"
+                    alt="" />
+                </div>
+                <h3 className="icon-title text-white">Very Full Secured</h3>
+                <p className="icon-caption">
+                  With real-time analytics, we<br />
+                  will guarantee your data
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="card-block">
+            <div className="card">
+              <div className="d-flex flex-lg-row flex-column align-items-center">
+                <div className="me-lg-3">
+                  <img
+                    src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-1%20(1).png"
+                    alt="" />
+                </div>
+                <div className="flex-grow-1 text-lg-start text-center card-text">
+                  <h3 className="card-title text-white">
+                    Fast Business Management in 30 minutes
+                  </h3>
+                  <p className="card-caption">
+                    Our tools for business analysis helps an organization
+                    understand<br className="d-none d-lg-block " />
+                    market or business development.
+                  </p>
+                </div>
+                <div className="card-btn-space">
+                  <button className="btn btn-card">Buy Now</button>
+                  <button className="btn btn-outline">Demo Version</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
     </>
   );
 }
