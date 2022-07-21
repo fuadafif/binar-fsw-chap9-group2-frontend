@@ -14,14 +14,18 @@ function Login() {
 
   useEffect(() => {
     const isAuthenticated = localStorage.getItem("isAuthenticated");
+    const emailKey = localStorage.getItem("email");
+
     isAuthenticated ? alert("User already login") : alert("Please login first");
-    if (isAuthenticated) {
+
+    if (isAuthenticated && emailKey) {
       navigate("/home");
     }
   }, []);
 
   async function submit(event) {
     event.preventDefault();
+    const emailValue = email;
 
     try {
       const result = await axios.post("http://localhost:4000/login", {
@@ -30,6 +34,7 @@ function Login() {
       });
       alert(result.data.message);
       localStorage.setItem("isAuthenticated", true);
+      localStorage.setItem("email", emailValue);
       navigate("/home");
     } catch (err) {
       alert("You don't have an account, create your account");
