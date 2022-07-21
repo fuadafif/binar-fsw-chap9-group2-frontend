@@ -3,18 +3,27 @@ import LandingNav from "../components/navbar/HomeNav";
 import PicProfile from "../assets/home/img/pic-profile.png";
 import RPSGame from "../assets/home/img/rock-paper-scissors.jpg";
 import SnakeGame from "../assets/home/img/snake-game.jpg";
+import { useEffect } from "react";
 
 import "../assets/home/css/Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
+
+  useEffect(() => {
+    const emailKey = localStorage.getItem("email");
+    if(emailKey) {
+      document.getElementById('name').innerHTML = `Hola!! ${emailKey}`;
+    }
+  });
+
   return (
     <div>
       <LandingNav />
       <div className="text-center">
         <img src={PicProfile} alt="profile pic" className="profile"></img>
         <br />
-        <h2>Hi, username!</h2>
+        <h2 id="name"></h2>
       </div>
 
       <hr />
