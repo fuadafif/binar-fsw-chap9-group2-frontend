@@ -1,23 +1,31 @@
 import React from "react";
 import axios from "axios";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
-import "./login-assets/css/Login.css";
+import "../assets/login/css/Login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Login() {
-  const [tampil, setTampil] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const isAuthenticated = localStorage.getItem("isAuthenticated");
+    const emailKey = localStorage.getItem("email");
+
+    isAuthenticated ? alert("User already login") : alert("Please login first");
+
+    if (isAuthenticated && emailKey) {
+      navigate("/home");
+    }
+  }, []);
+
   async function submit(event) {
     event.preventDefault();
-    setTampil(true);
-    setEmail(document.getElementById("email").value);
-    setPassword(document.getElementById("password").value);
+    const emailValue = email;
 
     try {
       const result = await axios.post("http://localhost:4000/login", {
@@ -25,16 +33,18 @@ function Login() {
         password: password,
       });
       alert(result.data.message);
-      navigate('/home');
+      localStorage.setItem("isAuthenticated", true);
+      localStorage.setItem("email", emailValue);
+      navigate("/home");
     } catch (err) {
-      alert("incorrect username or password!");
+      alert("You don't have an account, create your account");
     }
   }
 
   return (
     <div className="Form container text-center d-flex vh-100">
-      <div className="element mx-auto my-auto col-8"> 
-      <h1 className="text-center p-3">LOGIN</h1>
+      <div className="element mx-auto my-auto col-8">
+        <h1 className="text-center p-3">LOGIN</h1>
 
         <Form inline onSubmit={submit}>
           <FormGroup>
@@ -66,22 +76,14 @@ function Login() {
             />
           </FormGroup>{" "}
           <a href="#">Forget password?</a>
-          <br/>
-          <br/>
-          <Button color="primary" type="submit">Login</Button>
+          <br />
+          <a href="/register">Create your account!</a>
+          <br />
+          <br />
+          <Button color="primary" type="submit">
+            Login
+          </Button>
         </Form>
-        <p>
-          {tampil && (
-            <>
-              <div className="box-view">
-                <span>Email</span> : {email}
-                <br />
-                <span>Password</span> : {password}
-              </div>
-            </>
-          )}
-        </p>
-        
       </div>
     </div>
   );
