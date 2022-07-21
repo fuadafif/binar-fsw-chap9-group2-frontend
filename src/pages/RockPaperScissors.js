@@ -22,39 +22,22 @@ function RockPaperScissors() {
   });
 
   class Game {
-    // Fungsi ini untuk mengacak pilihan komputer
     randomize() {
-      // Menyimpan pilihan ke dalam array
-      // Ada 3 element yg bisa diakses mulai dari index-0, index-1, index-2
       const choices = ["rock", "paper", "scissor"];
-
-      // Math.random() mengacak angka desimal dari 0 sampai kurang dari 1
-      // Kemudian angka tersebut dikalikan 3 dan dibulatkan ke bawah dengan Math.floor().
-      // sehingga, hasil akhir berupa angka 0, 1, atau 2
-      // hasil ini nantinya bisa digunakkan untuk mengakses array yang memiliki 3 elemen secara acak.
       const index = Math.floor(Math.random() * 3);
-
-      // Akses element yg ada di dalam array choice dengan index hasil acakan
       return choices[index];
     }
 
     playGame(playerChoice) {
-      // Pertama, hapus semua background agak player bisa main berkali kali tanpa harus mengklik reset secara manual
       this.resetBackground();
 
-      // Cetak pilihan player & atur background pada pilihan tsb
       console.log(`Player memilih ${playerChoice}`);
       this.setBackground("player", playerChoice);
 
-      // Cetak pilihan computer & atur background pada pilihan tsb
       const comChoice = this.randomize();
       console.log(`COM memilih ${comChoice}`);
       this.setBackground("com", comChoice);
 
-      // Bandingkan pilihan computer & player
-      // Jika sama, panggil fungsi resultDraw()
-      // Jika player menang, panggil fungsi resultPlayerWin()
-      // Jika player kalah, panggil fungsi resultPlayerLose()
       if (playerChoice === comChoice) {
         return this.resultDraw();
       }
@@ -85,16 +68,13 @@ function RockPaperScissors() {
     }
 
     setBackground(playerType, choice) {
-      // Ambil element berdasar id, kemudian berikan kelas custom-selected
-      // Cara di bawah bisa dilakukan karena penamaan id menggunakan format jenisplayer-pilihan
+
       const selectedElement = document.getElementById(`${playerType}-${choice}`);
 
-      // Kelas custom-selected memberikan background, cek .custom-selected di style.css
       selectedElement.classList.add("custom-selected");
     }
 
     resetBackground() {
-      // hapus style background pada pilihan player & computer
       document.getElementById("player-rock").classList.remove("custom-selected");
       document.getElementById("player-paper").classList.remove("custom-selected");
       document.getElementById("player-scissor").classList.remove("custom-selected");
@@ -102,73 +82,50 @@ function RockPaperScissors() {
       document.getElementById("com-paper").classList.remove("custom-selected");
       document.getElementById("com-scissor").classList.remove("custom-selected");
 
-      // hapus style background pada tulisan VS
       document.getElementById("vs").classList.remove("custom-green-vs-box");
       document.getElementById("vs").classList.remove("custom-green-darker-vs-box");
 
-      // atur kembali tulisan menjadi VS & kembalikan style asal
       document.getElementById("vs").innerHTML = "VS";
       document.getElementById("vs").classList.add("custom-vs-text");
     }
 
     resultDraw() {
-      // Cetak tulisan ke console
       console.log("DRAW");
 
-      // Ambil element & ubah tulisannya
       const vsElement = document.getElementById("vs");
       vsElement.innerHTML = "DRAW";
-
-      // Hapus kelas custom-vs-text & tambahkan kelas custom-green-darker-vs-box
-      // Cek kelas custom-vs-text & custom-green-darker-vs-box di style.css
       vsElement.classList.remove("custom-vs-text");
       vsElement.classList.add("custom-green-darker-vs-box");
     }
 
     resultPlayerLose() {
-      // Cetak tulisan ke console
       console.log("COM WIN");
 
-      // Ambil element & ubah tulisannya
       const vsElement = document.getElementById("vs");
       vsElement.innerHTML = "COM WIN";
-
-      // Hapus kelas custom-vs-text & tambahkan kelas custom-green-vs-box
-      // Cek kelas custom-vs-text & custom-green-vs-box di style.css
       vsElement.classList.remove("custom-vs-text");
       vsElement.classList.add("custom-green-vs-box");
     }
 
     resultPlayerWin() {
-      // Cetak tulisan ke console
       console.log("PLAYER WIN");
 
-      // Ambil element & ubah tulisannya
       const vsElement = document.getElementById("vs");
       vsElement.innerHTML = "PLAYER 1 WIN";
-
-      // Hapus kelas custom-vs-text & tambahkan kelas custom-green-vs-box
-      // Cek kelas custom-vs-text & custom-green-vs-box di style.css
       vsElement.classList.remove("custom-vs-text");
       vsElement.classList.add("custom-green-vs-box");
+
+      const score = "SCORE";
+      if(localStorage.getItem(score) === null) {
+        localStorage.setItem(score, 0);
+      }
+      let count = localStorage.getItem(score);
+      count++;
+      localStorage.setItem(score, count);
     }
   }
 
-  // Membuat object baru menggunakan kelas Game
   const game = new Game();
-
-  // Menyimpan semua elemen yang dibutuhkan ke dalam variable
-  // const playerRock = document.getElementById("player-rock");
-  // const playerPaper = document.getElementById("player-paper");
-  // const playerScissor = document.getElementById("player-scissor");
-
-  // const comRock = document.getElementById("com-rock");
-  // const comPaper = document.getElementById("com-paper");
-  // const comScissor = document.getElementById("com-scissor");
-
-  // const versus = document.getElementById("vs");
-
-  // const reset = document.getElementById("reset");
 
   function rock() {
     game.playGame("rock");
@@ -188,7 +145,18 @@ function RockPaperScissors() {
   }
 
   const [modal, setModal] = React.useState(false);
-  const toggle = () => setModal(!modal);
+  const toggle = () => {
+    setModal(!modal);
+
+    const playerName = document.getElementById('playerName');
+    const email = "email";
+    playerName.innerHTML = localStorage.getItem(email)
+  
+    const playerScore = document.getElementById('playerScore');
+    const score = "SCORE";
+    playerScore.innerHTML = localStorage.getItem(score);
+  }
+
 
   return (
     <div className="body">
@@ -215,34 +183,22 @@ function RockPaperScissors() {
             }}
           >
             <Button color="danger" onClick={toggle}>
-              Leaderboard
+              Score
             </Button>
             <Modal isOpen={modal} toggle={toggle}>
-              <ModalHeader toggle={toggle}>Top Score</ModalHeader>
+              <ModalHeader toggle={toggle}>Score</ModalHeader>
               <ModalBody>
                 <Table>
                   <thead>
                     <tr>
-                      <th>No.</th>
-                      <th>Username</th>
+                      <th>Player Name</th>
                       <th>Score</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <th scope="row">1</th>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">2</th>
-                      <td></td>
-                      <td></td>
-                    </tr>
-                    <tr>
-                      <th scope="row">3</th>
-                      <td></td>
-                      <td></td>
+                      <td id="playerName"></td>
+                      <td id="playerScore"></td>
                     </tr>
                   </tbody>
                 </Table>
