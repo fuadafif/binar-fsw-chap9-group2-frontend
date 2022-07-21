@@ -145,16 +145,16 @@ function RockPaperScissors() {
   }
 
   const [modal, setModal] = React.useState(false);
+  const [tampil, setTampil] = React.useState(false);
+  const [playerName, setPlayerName] = React.useState("");
+  const [playerScore, setPlayerScore] = React.useState("");
   const toggle = () => {
     setModal(!modal);
-
-    const playerName = document.getElementById('playerName');
+    setTampil(!tampil);
     const email = "email";
-    playerName.innerHTML = localStorage.getItem(email)
-  
-    const playerScore = document.getElementById('playerScore');
+    setPlayerName(localStorage.getItem(email));
     const score = "SCORE";
-    playerScore.innerHTML = localStorage.getItem(score);
+    setPlayerScore(localStorage.getItem(score));
   }
 
 
@@ -189,18 +189,22 @@ function RockPaperScissors() {
               <ModalHeader toggle={toggle}>Score</ModalHeader>
               <ModalBody>
                 <Table>
+                {tampil && (
+                    <>
                   <thead>
                     <tr>
-                      <th>Player Name</th>
+                      <th>Player</th>
                       <th>Score</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td id="playerName"></td>
-                      <td id="playerScore"></td>
+                      <td>{playerName}</td>
+                      <td>{playerScore}</td>
                     </tr>
                   </tbody>
+                  </>
+                )}
                 </Table>
               </ModalBody>
               <ModalFooter>
