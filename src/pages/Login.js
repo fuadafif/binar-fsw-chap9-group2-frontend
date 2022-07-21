@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
-import "./login-assets/css/Login.css";
+import "../assets/login/css/Login.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Login() {
@@ -13,10 +13,10 @@ function Login() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const isAuthenticated = localStorage.getItem('isAuthenticated');
-    isAuthenticated ? alert('User already login') : alert('Please login first');
+    const isAuthenticated = localStorage.getItem("isAuthenticated");
+    isAuthenticated ? alert("User already login") : alert("Please login first");
     if (isAuthenticated) {
-      navigate('/home');
+      navigate("/home");
     }
   }, []);
 
@@ -29,8 +29,8 @@ function Login() {
         password: password,
       });
       alert(result.data.message);
-      localStorage.setItem('isAuthenticated', true);
-      navigate('/home');
+      localStorage.setItem("isAuthenticated", true);
+      navigate("/home");
     } catch (err) {
       alert("You don't have an account, create your account");
     }
@@ -38,8 +38,8 @@ function Login() {
 
   return (
     <div className="Form container text-center d-flex vh-100">
-      <div className="element mx-auto my-auto col-8"> 
-      <h1 className="text-center p-3">LOGIN</h1>
+      <div className="element mx-auto my-auto col-8">
+        <h1 className="text-center p-3">LOGIN</h1>
 
         <Form inline onSubmit={submit}>
           <FormGroup>
@@ -73,10 +73,12 @@ function Login() {
           <a href="#">Forget password?</a>
           <br />
           <a href="/register">Create your account!</a>
-          <br/>
-          <br/>
-          <Button color="primary" type="submit">Login</Button>
-        </Form>        
+          <br />
+          <br />
+          <Button color="primary" type="submit">
+            Login
+          </Button>
+        </Form>
       </div>
     </div>
   );
