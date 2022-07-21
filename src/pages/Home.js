@@ -1,6 +1,10 @@
 import LandingNav from "../components/navbar/HomeNav";
 
-import "./home-assets/css/Home.css";
+import PicProfile from "../assets/home/img/pic-profile.png";
+import RPSGame from "../assets/home/img/rock-paper-scissors.jpg";
+import SnakeGame from "../assets/home/img/snake-game.jpg";
+
+import "../assets/home/css/Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
@@ -8,9 +12,9 @@ function Home() {
     <div>
       <LandingNav />
       <div className="text-center">
-        <img src="/player.png" alt="profile pic" className="profile"></img>
+        <img src={PicProfile} alt="profile pic" className="profile"></img>
         <br />
-        <h2>Username</h2>
+        <h2>Hi, username!</h2>
       </div>
 
       <hr />
@@ -22,7 +26,7 @@ function Home() {
       <div className="container-games">
         <div className="col game">
           <div className="card">
-            <img src="/rock-paper-scissors.png" className="card-img-top img-game" alt="rock paper scissor" />
+            <img src={RPSGame} className="card-img-top img-game" alt="rock paper scissor" />
             <div className="card-body">
               <h5 className="card-title">Rock Paper Scissor</h5>
               <p className="card-text">Rock-Paper-Scissors is a two-person hand game. This game is often used for random selection. The players choose one {`(eg, "Rock! Paper! Scissors!")`}. </p>
@@ -35,7 +39,7 @@ function Home() {
 
         <div className="col game">
           <div className="card">
-            <img src="/snake-game.webp" className="card-img-top img-game" alt="snake" />
+            <img src={SnakeGame} className="card-img-top img-game" alt="snake" />
             <div className="card-body">
               <h5 className="card-title">Snake</h5>
               <p className="card-text">
