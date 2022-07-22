@@ -55,6 +55,18 @@ function HomeNav() {
               Game List
             </NavLink>
           </NavItem>
+          <NavItem>
+            <NavLink
+              href="#"
+              onClick={() => {
+                navigate("/players");
+              }}
+              activeStyle
+            >
+              Players
+            </NavLink>
+          </NavItem>
+
         </Nav>
       </Navbar>
     </>

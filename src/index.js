@@ -12,6 +12,7 @@ import GameList from "./pages/GameList";
 import RockPaperScissors from "./pages/RockPaperScissors";
 import PageNotFound from "./pages/PageNotFound";
 import PlayGame from "./pages/PlayGame";
+import Players from "./pages/Players";
 
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -29,6 +30,7 @@ root.render(
       <Route path="*" element={<PageNotFound />} />
       <Route path="/rock-paper-scissors" element={<RockPaperScissors />} />
       <Route path="/play-game" element={<PlayGame />} />
+      <Route path="/players" element={<Players />} />
     </Routes>
   </BrowserRouter>
 );
