@@ -18,6 +18,10 @@
   letter-spacing: 1px;
 }
 
+.li-lg-1 {
+  height: 10px;
+}
+
 .fgt-pss-css {
   color: black;
   text-decoration: none;

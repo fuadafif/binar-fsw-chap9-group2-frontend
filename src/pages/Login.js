@@ -7,6 +7,8 @@ import { FaFacebookF, FaTwitter, FaGoogle } from "react-icons/fa";
 
 import "../assets/login/css/Login.css";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
+import Logo1 from "../assets/login/img/li-logo-1.png";
+import Logo2 from "../assets/login/img/li-logo-2.png";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -50,17 +52,17 @@ function Login() {
             <div className="card card-css">
               <div className="row g-0">
                 <div className="col-md-6 col-lg-5 d-none d-md-block">
-                  <img src="https://img.freepik.com/premium-vector/game-logo-design-joystick-icon_18099-102.jpg" alt="login form" className="img-fluid img-f-css" />
+                  <img src={Logo2} alt="login form" className="img-fluid img-f-css" />
                 </div>
                 <div className="col-md-6 col-lg-7 d-flex align-items-center">
                   <div className="card-body p-4 p-lg-5 text-black">
                     <Form inline onSubmit={submit}>
                       <div className="d-flex align-items-center mb-3 pb-1">
                         <i className="fas fa-cubes fa-2x me-3 i-cubes-css"></i>
-                        <span className="h1 fw-bold mb-0">Logo</span>
+                        {/* <span className="h1 fw-bold mb-0"></span> */}
                       </div>
 
-                      <h5 className="fw-normal mb-3 pb-3 sign-css">Sign into your account</h5>
+                      <h2 className="fw-normal mb-3 pb-3 sign-css">Sign into your account</h2>
 
                       <FormGroup className="form-outline mb-4">
                         <Input
@@ -102,7 +104,7 @@ function Login() {
                       </a>
                       <p className="small mb-5 pb-lg-2 d-acnt-css">
                         Don't have an account?{" "}
-                        <a href="#!" className="reg-css">
+                        <a href="/register" className="reg-css">
                           Register here
                         </a>
                       </p>
@@ -111,13 +113,13 @@ function Login() {
 
                       <div className="text-center">
                         <p>or login with:</p>
-                        <a href="#!" type="button" className="btn-lg fs-5">
+                        <a href="https://www.facebook.com/" type="button" className="btn-lg fs-5">
                           <FaFacebookF />{" "}
                         </a>
-                        <a href="#!" type="button" className="btn-lg fs-5">
+                        <a href="https://twitter.com/" type="button" className="btn-lg fs-5">
                           <FaTwitter />{" "}
                         </a>
-                        <a href="#!" type="button" className="btn-lg fs-5">
+                        <a href="https://www.google.com/" type="button" className="btn-lg fs-5">
                           <FaGoogle />
                         </a>
                       </div>
