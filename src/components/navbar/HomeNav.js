@@ -7,18 +7,19 @@ function HomeNav() {
   return (
     <>
       {/* Navbar */}
-      <Navbar className="my-2" color="dark" dark>
+      <Navbar className="" color="dark" dark>
         {/* NavBrand */}
         <NavbarBrand href="/">
           <img
             alt="logo"
-            src="../logo"
+            src="gaming.jpg"
             style={{
               height: 40,
               width: 40,
+              padding: 6,
             }}
           />
-          FSW-CHAP9-GROUP2
+          Team TWO
         </NavbarBrand>
         {/* Nav */}
         <Nav pills>

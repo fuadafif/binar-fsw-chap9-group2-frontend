@@ -1,3 +1,9 @@
+<<<<<<< HEAD
+// import { Img } from "reactstrap";
+
+import HomeNav from "../components/navbar/HomeNav"
+import "./home-assets/css/Home.css";
+=======
 import LandingNav from "../components/navbar/HomeNav";
 
 import PicProfile from "../assets/home/img/pic-profile.png";
@@ -7,6 +13,7 @@ import { useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 
 import "../assets/home/css/Home.css";
+>>>>>>> ca33d3dd3a4d41ee772262eb7ebe24e28ef8fb8f
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
@@ -38,6 +45,11 @@ function Home() {
 
   return (
     <div>
+<<<<<<< HEAD
+      <HomeNav />
+      <img src="./home-assets/img/player.png" alt="profile picture"></img>
+      <h5>Username</h5>
+=======
       <LandingNav />
       <div className="text-center">
         <img src={PicProfile} alt="profile pic" className="profile"></img>
@@ -45,6 +57,7 @@ function Home() {
         <h2 id="name"></h2>
         <button onClick={logout} className="btn btn-danger" id="logout" hidden>Logout</button>
       </div>
+>>>>>>> ca33d3dd3a4d41ee772262eb7ebe24e28ef8fb8f
 
       <hr />
 
