@@ -3,22 +3,16 @@ import { Carousel, CarouselItem, CarouselControl, CarouselIndicators, CarouselCa
 
 const items = [
   {
-    src: "https://picsum.photos/id/123/800/300",
+    src: "../src/assets/home/img/rock-paper-scissors.jpg",
     altText: "Game 1",
     caption: "Game 1",
     key: 1,
   },
   {
-    src: "https://picsum.photos/id/456/800/300",
+    src: "../src/assets/home/img/snake-game.jpg",
     altText: "Game 2",
     caption: "Game 2",
     key: 2,
-  },
-  {
-    src: "https://picsum.photos/id/678/800/300",
-    altText: "Game 3",
-    caption: "Game 3",
-    key: 3,
   },
 ];
 

@@ -1,45 +1,76 @@
 import React, { useState } from "react";
-import { Card, CardImg, Container, Col, Row } from "reactstrap";
+import { Card, Container, Col, Row, CardHeader, CardBody, CardTitle, CardText } from "reactstrap";
 import Carousel from "../carousel";
 import LandingNav from "../components/navbar/LandingNav";
+import Footer from "../components/Footer/Footer";
+import RPSGame from "../assets/home/img/rock-paper-scissors.jpg";
+import snakeGame from "../assets/home/img/snake-game.jpg";
+import "../assets/home/css/Landing.css";
 
 function LandingPage() {
   return (
-    <>
+    <div className="main-container">
       <LandingNav />
-      {/* CardImg */}
-      <Card className="my-2">
-        <CardImg
-          alt="Card image cap"
-          src="https://picsum.photos/id/1025/1200/400"
-          style={{
-            height: 180,
-          }}
-          top
-          width="100%"
-        />
-      </Card>
       {/* Title Tengah */}
-      <Container className="bg-light border text-center" fluid="sm">
-        <h1>Lorem Ipsum</h1>
+      <Container className="text-center" fluid="sm">
+        <h1>Web Games</h1>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Id diam maecenas ultricies mi eget mauris pharetra et ultrices. Maecenas ultricies mi eget mauris
-          pharetra.
+          Permainan daring adalah jenis permainan komputer yang memanfaatkan jaringan komputer. Jaringan yang biasanya digunakan adalah jaringan internet dan yang sejenisnya serta selalu menggunakan teknologi yang ada saat ini, seperti
+          modem dan sambungan kabel.
         </p>
       </Container>
-      {/* Carousel */}
-      <Row>
-        <Col className="bg-light border" xs="4">
-          <Container className="bg-light border text-left" fluid="sm">
-            <h1>Lorem Ipsum</h1>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-          </Container>
-        </Col>
-        <Col className="bg-light border" xs="8">
-          <Container>{<Carousel />}</Container>
-        </Col>
-      </Row>
-    </>
+
+      {/* Detail game tengah */}
+      <Container fluid="sm">
+        <Row xs="2">
+          <Col>
+            <Card
+              className="my-2"
+              color="light"
+              style={{
+                width: "18rem",
+              }}
+            >
+              <CardHeader>
+                <CardTitle tag="h5">Rock-Paper-Scissor</CardTitle>
+                <CardText>adalah sebuah permainan tangan dua orang. Di kalangan anak-anak Indonesia, permainan ini juga dikenal dengan istilah "Suwit Jepang". Di Indonesia dikenal juga permainan sejenis yang dinamakan suwit.</CardText>
+              </CardHeader>
+              <CardBody>Detail..</CardBody>
+            </Card>
+          </Col>
+          <Col>
+            <img className="game-img" src={RPSGame} />
+          </Col>
+        </Row>
+
+        <Row xs="2">
+          <Col>
+            <Container>
+              <div className="game-img">
+                <img className="game-img" src={snakeGame} />
+              </div>
+            </Container>
+          </Col>
+          <Col>
+            <Card
+              className="my-2"
+              color="light"
+              style={{
+                width: "18rem",
+              }}
+            >
+              <CardHeader>
+                <CardTitle tag="h5">Snake Game</CardTitle>
+                <CardText>Snake adalah nama umum untuk konsep permainan video dimana pemain mengendalikan sebuah garis yang tumbuh memanjang, dengan garis itu sendiri menjadi rintangan utama.</CardText>
+              </CardHeader>
+              <CardBody>Detail..</CardBody>
+            </Card>
+          </Col>
+        </Row>
+      </Container>
+
+      <Footer />
+    </div>
   );
 }
 
