@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 
-import "./register-assets/css/Register.css";
+import "../assets/register/css/Register.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Register() {
@@ -87,12 +87,10 @@ function Register() {
               placeholder="Enter your Password"
             />
           </FormGroup>{" "}
-          <Button color="primary" type="submit" onClick={register}>
+          <Button type="submit" onClick={register}>
             Create Account
           </Button>
         </Form>
-        <br />
-        <a href="/login">Already have an account?</a>
       </div>
     </div>
   );
