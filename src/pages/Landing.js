@@ -1,75 +1,107 @@
 import React from "react";
 import { Card, Container, Col, Row, CardHeader, CardBody, CardTitle, CardText } from "reactstrap";
 import LandingNav from "../components/navbar/LandingNav";
-import Footer from "../components/Footer/Footer";
-import RPSGame from "../assets/home/img/rock-paper-scissors.jpg";
-import snakeGame from "../assets/home/img/snake-game.jpg";
-import "../assets/home/css/Landing.css";
+
+import "./landing-assets/css/Landing.css"
+import './game-assets/css/bootstrap.min.css';
+import fornite from "./landing-assets/img/fornite.jpg"
+
+
 
 function LandingPage() {
   return (
-    <div className="main-container">
-      <LandingNav />
-      {/* Title Tengah */}
-      <Container className="text-center" fluid="sm">
-        <h1>Web Games</h1>
-        <p>
-          Permainan daring adalah jenis permainan komputer yang memanfaatkan jaringan komputer. Jaringan yang biasanya digunakan adalah jaringan internet dan yang sejenisnya serta selalu menggunakan teknologi yang ada saat ini, seperti
-          modem dan sambungan kabel.
-        </p>
-      </Container>
+    <>
+      <div>
+        <LandingNav />
+        {/* CardImg */}
+        <Card className="header1">
+          <CardImg
+            src={fornite}
+            alt="Card image cap"
+            top
+            width="20%"
+          />
+        </Card>
+      </div>
+      <div className="main">
+        <div className="content-2-4 container-xxl mx-auto p-0 position-relative ">
+          <div className="text-center title-text">
+            <h1 className="text-title text-white">3 Keys Benefit</h1>
+            <p className="text-caption">
+              You can easily manage your business with a powerful tools
+            </p>
+          </div>
 
-      {/* Detail game tengah */}
-      <Container fluid="sm">
-        <Row xs="2">
-          <Col>
-            <Card
-              className="my-2"
-              color="light"
-              style={{
-                width: "18rem",
-              }}
-            >
-              <CardHeader>
-                <CardTitle tag="h5">Rock-Paper-Scissor</CardTitle>
-                <CardText>adalah sebuah permainan tangan dua orang. Di kalangan anak-anak Indonesia, permainan ini juga dikenal dengan istilah "Suwit Jepang". Di Indonesia dikenal juga permainan sejenis yang dinamakan suwit.</CardText>
-              </CardHeader>
-              <CardBody>Detail..</CardBody>
-            </Card>
-          </Col>
-          <Col>
-            <img className="game-img" src={RPSGame} />
-          </Col>
-        </Row>
-
-        <Row xs="2">
-          <Col>
-            <Container>
-              <div className="game-img">
-                <img className="game-img" src={snakeGame} />
+          <div className="grid-padding text-center">
+            <div className="row">
+              <div className="col-lg-4 column">
+                <div className="icon">
+                  <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-11.png"
+                    alt=""
+                    width="50" />
+                </div>
+                <h3 className="icon-title text-white">Easy to Operate</h3>
+                <p className="icon-caption">
+                  This can easily help you to<br />
+                  grow up your business fast
+                </p>
               </div>
-            </Container>
-          </Col>
-          <Col>
-            <Card
-              className="my-2"
-              color="light"
-              style={{
-                width: "18rem",
-              }}
-            >
-              <CardHeader>
-                <CardTitle tag="h5">Snake Game</CardTitle>
-                <CardText>Snake adalah nama umum untuk konsep permainan video dimana pemain mengendalikan sebuah garis yang tumbuh memanjang, dengan garis itu sendiri menjadi rintangan utama.</CardText>
-              </CardHeader>
-              <CardBody>Detail..</CardBody>
-            </Card>
-          </Col>
-        </Row>
-      </Container>
+              <div className="col-lg-4 column">
+                <div className="icon">
+                  <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-12.png"
+                    alt="" />
+                </div>
+                <h3 className="icon-title text-white">Real-Time Analytic</h3>
+                <p className="icon-caption">
+                  With real-time analytics, you<br />
+                  can check data in real time
+                </p>
+              </div>
+              <div className="col-lg-4 column">
+                <div className="icon">
+                  <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-13.png"
+                    alt="" />
+                </div>
+                <h3 className="icon-title text-white">Very Full Secured</h3>
+                <p className="icon-caption">
+                  With real-time analytics, we<br />
+                  will guarantee your data
+                </p>
+              </div>
+            </div>
+          </div>
 
-      <Footer />
-    </div>
+          <div className="card-block">
+            <div className="card">
+              <div className="d-flex flex-lg-row flex-column align-items-center">
+                <div className="me-lg-3">
+                  <img
+                    src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-1%20(1).png"
+                    alt="" />
+                </div>
+                <div className="flex-grow-1 text-lg-start text-center card-text">
+                  <h3 className="card-title text-white">
+                    Fast Business Management in 30 minutes
+                  </h3>
+                  <p className="card-caption">
+                    Our tools for business analysis helps an organization
+                    understand<br className="d-none d-lg-block " />
+                    market or business development.
+                  </p>
+                </div>
+                <div className="card-btn-space">
+                  <button className="btn btn-card">Buy Now</button>
+                  <button className="btn btn-outline">Demo Version</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </>
+
   );
 }
 
