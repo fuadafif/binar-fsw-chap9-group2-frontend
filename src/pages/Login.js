@@ -7,7 +7,7 @@ import { FaFacebookF, FaTwitter, FaGoogle } from "react-icons/fa";
 
 import "../assets/login/css/Login.css";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
-import Logo1 from "../assets/login/img/li-logo-1.png";
+// import Logo1 from "../assets/login/img/li-logo-1.png";
 import Logo2 from "../assets/login/img/li-logo-2.png";
 
 function Login() {
@@ -61,10 +61,11 @@ function Login() {
                         <i className="fas fa-cubes fa-2x me-3 i-cubes-css"></i>
                         {/* <span className="h1 fw-bold mb-0"></span> */}
                       </div>
-
                       <h2 className="fw-normal mb-3 pb-3 sign-css">Sign into your account</h2>
-
-                      <FormGroup className="form-outline mb-4">
+                      <FormGroup>
+                        <Label for="email" hidden>
+                          E-mail
+                        </Label>
                         <Input
                           onChange={(event) => {
                             setEmail(event.target.value);
@@ -73,32 +74,27 @@ function Login() {
                           id="email"
                           name="email"
                           placeholder="Enter your e-mail address"
-                          className="form-control form-control-lg"
                         />
-                        <Label className="form-label" for="email">
-                          E-mail address
+                      </FormGroup>{" "}
+                      <FormGroup>
+                        <Label for="password" hidden>
+                          Password
                         </Label>
-                      </FormGroup>
-
-                      <FormGroup className="form-outline mb-4">
-                        <input type="password" id="password" name="password" placeholder="Enter your Password" className="form-control form-control-lg" />
-                        <label
+                        <Input
                           onChange={(event) => {
                             setPassword(event.target.value);
                           }}
-                          className="form-label"
-                          for="password"
-                        >
-                          Password
-                        </label>
-                      </FormGroup>
-
+                          type="password"
+                          id="password"
+                          name="password"
+                          placeholder="Enter your Password"
+                        />
+                      </FormGroup>{" "}
                       <div className="pt-1 mb-4">
-                        <Button className="btn btn-dark btn-lg btn-block" type="button">
+                        <Button className="btn btn-dark btn-lg btn-block" type="submit">
                           Login
                         </Button>
                       </div>
-
                       <a className="small fgt-pss-css" href="#!">
                         Forgot password?
                       </a>
@@ -108,9 +104,7 @@ function Login() {
                           Register here
                         </a>
                       </p>
-
                       <hr />
-
                       <div className="text-center">
                         <p>or login with:</p>
                         <a href="https://www.facebook.com/" type="button" className="btn-lg fs-5">
