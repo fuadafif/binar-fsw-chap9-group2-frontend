@@ -1,8 +1,12 @@
+
 // import { Img } from "reactstrap";
 
 import HomeNav from "../components/navbar/HomeNav"
+import Footer from "../components/Footer/Footer";
 import "./home-assets/css/Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import RPSGame from "../assets/home/img/rock-paper-scissors.jpg";
+import SnakeGame from "../assets/home/img/snake-game.jpg";
 
 function Home() {
 
@@ -18,6 +22,7 @@ function Home() {
     } else {
       name.innerHTML = `Welcome`;
       logoutButton.hidden = true;
+
     }
   });
 
@@ -34,8 +39,10 @@ function Home() {
   return (
     <div>
       <HomeNav />
+
       <img src="./home-assets/img/player.png" alt="profile picture"></img>
       <h5>Username</h5>
+
 
       <hr />
 
@@ -72,6 +79,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

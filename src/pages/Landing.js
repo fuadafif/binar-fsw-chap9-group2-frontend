@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import { Card, CardImg, Container, Col, Row } from "reactstrap";
-import Carousel from "../carousel";
+import React from "react";
+import { Card, Container, Col, Row, CardHeader, CardBody, CardTitle, CardText } from "reactstrap";
 import LandingNav from "../components/navbar/LandingNav";
+
 import "./landing-assets/css/Landing.css"
 import './game-assets/css/bootstrap.min.css';
 import fornite from "./landing-assets/img/fornite.jpg"
@@ -101,6 +101,7 @@ function LandingPage() {
       </div>
 
     </>
+
   );
 }
 
