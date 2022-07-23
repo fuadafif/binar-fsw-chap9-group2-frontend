@@ -1,5 +1,5 @@
-import LandingNav from "../components/navbar/HomeNav";
-
+import HomeNav from "../components/navbar/HomeNav";
+import Footer from "../components/Footer/Footer";
 import PicProfile from "../assets/home/img/pic-profile.png";
 import RPSGame from "../assets/home/img/rock-paper-scissors.jpg";
 import SnakeGame from "../assets/home/img/snake-game.jpg";
@@ -9,17 +9,16 @@ import "../assets/home/css/Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
-
   useEffect(() => {
     const emailKey = localStorage.getItem("email");
-    if(emailKey) {
-      document.getElementById('name').innerHTML = `Hola!! ${emailKey}`;
+    if (emailKey) {
+      document.getElementById("name").innerHTML = `Hola!! ${emailKey}`;
     }
   });
 
   return (
     <div>
-      <LandingNav />
+      <HomeNav />
       <div className="text-center">
         <img src={PicProfile} alt="profile pic" className="profile"></img>
         <br />
@@ -61,6 +60,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

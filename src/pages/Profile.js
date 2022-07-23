@@ -1,8 +1,8 @@
-import LandingNav from "../components/navbar/HomeNav";
+import HomeNav from "../components/navbar/HomeNav";
+import Footer from "../components/Footer/Footer";
 import PicProfile from "../assets/home/img/pic-profile.png";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Button, Table } from "reactstrap";
-import axios from "axios";
 
 function Profile() {
   useEffect(() => {
@@ -14,7 +14,7 @@ function Profile() {
 
   return (
     <div>
-      <LandingNav />
+      <HomeNav />
       <div className="text-left">
         <img src={PicProfile} alt="profile pic" className="profile"></img>
         <br />
@@ -39,6 +39,7 @@ function Profile() {
         </Table>
       </div>
       <Button>Edit Profile</Button>
+      <Footer />
     </div>
   );
 }

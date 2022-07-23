@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card, Container, Col, Row, CardHeader, CardBody, CardTitle, CardText } from "reactstrap";
-import Carousel from "../carousel";
 import LandingNav from "../components/navbar/LandingNav";
 import Footer from "../components/Footer/Footer";
 import RPSGame from "../assets/home/img/rock-paper-scissors.jpg";

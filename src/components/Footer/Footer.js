@@ -6,6 +6,7 @@ function HomeNav() {
     <footer class="footer">
       <div class="container">
         <div class="row">
+          {/* about us */}
           <div class="footer-col">
             <h4>company</h4>
             <ul>
@@ -14,6 +15,7 @@ function HomeNav() {
               </li>
             </ul>
           </div>
+          {/* get help */}
           <div class="footer-col">
             <h4>get help</h4>
             <ul>
@@ -22,24 +24,18 @@ function HomeNav() {
               </li>
             </ul>
           </div>
+          {/* social links */}
           <div class="footer-col">
             <h4>follow us</h4>
-
             <div class="social-links">
-              <a href="https://www.facebook.com/" type="button" className="btn-lg fs-5">
-                <i class="fab fa-facebook-f">
-                  <FaFacebookF />{" "}
-                </i>
+              <a href="https://www.facebook.com/" type="button">
+                <FaFacebookF />{" "}
               </a>
-              <a href="https://twitter.com/" type="button" className="btn-lg fs-5">
-                <i class="fab fa-twitter">
-                  <FaTwitter />{" "}
-                </i>
+              <a href="https://twitter.com/" type="button">
+                <FaTwitter />{" "}
               </a>
-              <a href="https://www.google.com/" type="button" className="btn-lg fs-5">
-                <i class="fab fa-instagram">
-                  <FaGoogle />
-                </i>
+              <a href="https://www.google.com/" type="button">
+                <FaGoogle />
               </a>
             </div>
           </div>
