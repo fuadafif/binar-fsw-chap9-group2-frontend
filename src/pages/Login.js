@@ -1,11 +1,12 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { useNavigate } from "react-router-dom";
+import { Form, FormGroup, Label, Input, Button } from "reactstrap";
+import { FaFacebookF, FaTwitter, FaGoogle } from "react-icons/fa";
 
 import "../assets/login/css/Login.css";
-import "bootstrap/dist/css/bootstrap.min.css";
+import "mdb-react-ui-kit/dist/css/mdb.min.css";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -42,48 +43,91 @@ function Login() {
   }
 
   return (
-    <div className="Form container text-center d-flex vh-100">
-      <div className="element mx-auto my-auto col-8">
-        <h1 className="text-center p-3">LOGIN</h1>
+    <div className="vh-100 section-css">
+      <div className="container py-5 h-100">
+        <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="col col-xl-10">
+            <div className="card card-css">
+              <div className="row g-0">
+                <div className="col-md-6 col-lg-5 d-none d-md-block">
+                  <img src="https://img.freepik.com/premium-vector/game-logo-design-joystick-icon_18099-102.jpg" alt="login form" className="img-fluid img-f-css" />
+                </div>
+                <div className="col-md-6 col-lg-7 d-flex align-items-center">
+                  <div className="card-body p-4 p-lg-5 text-black">
+                    <Form inline onSubmit={submit}>
+                      <div className="d-flex align-items-center mb-3 pb-1">
+                        <i className="fas fa-cubes fa-2x me-3 i-cubes-css"></i>
+                        <span className="h1 fw-bold mb-0">Logo</span>
+                      </div>
 
-        <Form inline onSubmit={submit}>
-          <FormGroup>
-            <Label for="email" hidden>
-              E-mail
-            </Label>
-            <Input
-              onChange={(event) => {
-                setEmail(event.target.value);
-              }}
-              type="text"
-              id="email"
-              name="email"
-              placeholder="Enter your e-mail address"
-            />
-          </FormGroup>{" "}
-          <FormGroup>
-            <Label for="password" hidden>
-              Password
-            </Label>
-            <Input
-              onChange={(event) => {
-                setPassword(event.target.value);
-              }}
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter your Password"
-            />
-          </FormGroup>{" "}
-          <a href="#">Forget password?</a>
-          <br />
-          <a href="/register">Create your account!</a>
-          <br />
-          <br />
-          <Button color="primary" type="submit">
-            Login
-          </Button>
-        </Form>
+                      <h5 className="fw-normal mb-3 pb-3 sign-css">Sign into your account</h5>
+
+                      <FormGroup className="form-outline mb-4">
+                        <Input
+                          onChange={(event) => {
+                            setEmail(event.target.value);
+                          }}
+                          type="text"
+                          id="email"
+                          name="email"
+                          placeholder="Enter your e-mail address"
+                          className="form-control form-control-lg"
+                        />
+                        <Label className="form-label" for="email">
+                          E-mail address
+                        </Label>
+                      </FormGroup>
+
+                      <FormGroup className="form-outline mb-4">
+                        <input type="password" id="password" name="password" placeholder="Enter your Password" className="form-control form-control-lg" />
+                        <label
+                          onChange={(event) => {
+                            setPassword(event.target.value);
+                          }}
+                          className="form-label"
+                          for="password"
+                        >
+                          Password
+                        </label>
+                      </FormGroup>
+
+                      <div className="pt-1 mb-4">
+                        <Button className="btn btn-dark btn-lg btn-block" type="button">
+                          Login
+                        </Button>
+                      </div>
+
+                      <a className="small fgt-pss-css" href="#!">
+                        Forgot password?
+                      </a>
+                      <p className="small mb-5 pb-lg-2 d-acnt-css">
+                        Don't have an account?{" "}
+                        <a href="#!" className="reg-css">
+                          Register here
+                        </a>
+                      </p>
+
+                      <hr />
+
+                      <div className="text-center">
+                        <p>or login with:</p>
+                        <a href="#!" type="button" className="btn-lg fs-5">
+                          <FaFacebookF />{" "}
+                        </a>
+                        <a href="#!" type="button" className="btn-lg fs-5">
+                          <FaTwitter />{" "}
+                        </a>
+                        <a href="#!" type="button" className="btn-lg fs-5">
+                          <FaGoogle />
+                        </a>
+                      </div>
+                    </Form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
