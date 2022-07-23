@@ -64,7 +64,10 @@ function Login() {
 
                       <h2 className="fw-normal mb-3 pb-3 sign-css">Sign into your account</h2>
 
-                      <FormGroup className="form-outline mb-4">
+                      <FormGroup>
+                        <Label for="email" hidden>
+                          E-mail
+                        </Label>
                         <Input
                           onChange={(event) => {
                             setEmail(event.target.value);
@@ -73,28 +76,24 @@ function Login() {
                           id="email"
                           name="email"
                           placeholder="Enter your e-mail address"
-                          className="form-control form-control-lg"
                         />
-                        <Label className="form-label" for="email">
-                          E-mail address
+                      </FormGroup>{" "}
+                      <FormGroup>
+                        <Label for="password" hidden>
+                          Password
                         </Label>
-                      </FormGroup>
-
-                      <FormGroup className="form-outline mb-4">
-                        <input type="password" id="password" name="password" placeholder="Enter your Password" className="form-control form-control-lg" />
-                        <label
+                        <Input
                           onChange={(event) => {
                             setPassword(event.target.value);
                           }}
-                          className="form-label"
-                          for="password"
-                        >
-                          Password
-                        </label>
-                      </FormGroup>
-
+                          type="password"
+                          id="password"
+                          name="password"
+                          placeholder="Enter your Password"
+                        />
+                      </FormGroup>{" "}
                       <div className="pt-1 mb-4">
-                        <Button className="btn btn-dark btn-lg btn-block" type="button">
+                        <Button className="btn btn-dark btn-lg btn-block" type="submit">
                           Login
                         </Button>
                       </div>
