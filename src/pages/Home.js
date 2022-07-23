@@ -4,18 +4,37 @@ import PicProfile from "../assets/home/img/pic-profile.png";
 import RPSGame from "../assets/home/img/rock-paper-scissors.jpg";
 import SnakeGame from "../assets/home/img/snake-game.jpg";
 import { useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 
 import "../assets/home/css/Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function Home() {
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const emailKey = localStorage.getItem("email");
+    const name = document.getElementById('name');
+    const logoutButton = document.getElementById("logout");
     if(emailKey) {
-      document.getElementById('name').innerHTML = `Hola!! ${emailKey}`;
+      name.innerHTML = `Hi!! ${emailKey}`;
+      logoutButton.hidden = false;
+    } else {
+      name.innerHTML = `Welcome`;
+      logoutButton.hidden = true;
     }
   });
+
+  function logout() {
+    const removeEmail = "email";
+    const removeAuth = "isAuthenticated";
+    window.confirm("Are you sure want to logout?");
+    localStorage.removeItem(removeEmail);
+    localStorage.removeItem(removeAuth);
+    window.location.reload();
+    navigate('/home');
+  }
 
   return (
     <div>
@@ -24,6 +43,7 @@ function Home() {
         <img src={PicProfile} alt="profile pic" className="profile"></img>
         <br />
         <h2 id="name"></h2>
+        <button onClick={logout} className="btn btn-danger" id="logout" hidden>Logout</button>
       </div>
 
       <hr />
