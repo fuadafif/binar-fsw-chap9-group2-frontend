@@ -16,7 +16,7 @@ function Home() {
     const emailKey = localStorage.getItem("email");
     const name = document.getElementById('name');
     const logoutButton = document.getElementById("logout");
-    if(emailKey) {
+    if (emailKey) {
       name.innerHTML = `Hi!! ${emailKey}`;
       logoutButton.hidden = false;
     } else {
@@ -54,7 +54,7 @@ function Home() {
       <br />
 
       <div className="container-games">
-        <div className="col game">
+        <div className="">
           <div className="card">
             <img src={RPSGame} className="card-img-top img-game" alt="rock paper scissor" />
             <div className="card-body">
@@ -67,7 +67,19 @@ function Home() {
           </div>
         </div>
 
-        <div className="col game">
+        <div className="">
+          <div className="card">
+            <img src={SnakeGame} className="card-img-top img-game" alt="snake" />
+            <div className="card-body">
+              <h5 className="card-title">Snake</h5>
+              <p className="card-text">
+                The player controls a long, thin creature, resembling a snake, which roams around on a bordered plane, picking up food (or some other item), trying to avoid hitting its own tail or the edges of the playing area.{" "}
+              </p>
+              <a href="/home" class="btn btn-primary">
+                Play Now
+              </a>
+            </div>
+          </div>
           <div className="card">
             <img src={SnakeGame} className="card-img-top img-game" alt="snake" />
             <div className="card-body">
