@@ -1,13 +1,13 @@
 import "../../assets/footer/css/Footer.css";
 import { FaFacebookF, FaTwitter, FaGoogle } from "react-icons/fa";
 
-function HomeNav() {
+function Footer() {
   return (
-    <footer class="footer mt-3">
-      <div class="container">
-        <div class="row">
+    <footer className="footer-wrapper">
+      <div className="container">
+        <div className="parent">
           {/* about us */}
-          <div class="footer-col">
+          <div className="footer-col">
             <h4>company</h4>
             <ul>
               <li>
@@ -16,7 +16,7 @@ function HomeNav() {
             </ul>
           </div>
           {/* get help */}
-          <div class="footer-col">
+          <div className="footer-col">
             <h4>get help</h4>
             <ul>
               <li>
@@ -25,9 +25,9 @@ function HomeNav() {
             </ul>
           </div>
           {/* social links */}
-          <div class="footer-col">
+          <div className="footer-col">
             <h4>follow us</h4>
-            <div class="social-links">
+            <div className="social-links">
               <a href="https://www.facebook.com/" type="button">
                 <FaFacebookF />{" "}
               </a>
@@ -44,5 +44,4 @@ function HomeNav() {
     </footer>
   );
 }
-
-export default HomeNav;
+export default Footer;
