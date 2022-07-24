@@ -3,13 +3,15 @@ import { Card, CardImg } from "reactstrap";
 import LandingNav from "../components/navbar/LandingNav";
 import "../assets/landing/css/Landing.css"
 import '../assets/game/css/bootstrap.min.css';
-import fornite from "../assets/landing/img/fornite.jpg"
+import fornite from "../assets/landing/img/fornite.jpg";
+import Footer from "../components/Footer/Footer";
 
 
 
 function LandingPage() {
   return (
     <>
+      {/* Navbar */}
       <div>
         <LandingNav />
         {/* CardImg */}
@@ -22,6 +24,9 @@ function LandingPage() {
           />
         </Card>
       </div>
+      {/* Navbar */}
+
+      {/* Main */}
       <div className="main">
         <div className="content-2-4 container-xxl mx-auto p-0 position-relative ">
           <div className="text-center title-text">
@@ -30,7 +35,6 @@ function LandingPage() {
               You can easily manage your business with a powerful tools
             </p>
           </div>
-
           <div className="grid-padding text-center">
             <div className="row">
               <div className="col-lg-4 column">
@@ -69,7 +73,6 @@ function LandingPage() {
               </div>
             </div>
           </div>
-
           <div className="card-block">
             <div className="card">
               <div className="d-flex flex-lg-row flex-column align-items-center">
@@ -96,8 +99,9 @@ function LandingPage() {
             </div>
           </div>
         </div>
-
+        <Footer />
       </div>
+      {/* End Main */}
 
     </>
 

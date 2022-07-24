@@ -5,6 +5,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
 
 
+html {
+    /*
+        Property "position: relative;" dan "min-height: 100%;" digunakan untuk membuat
+        tinggi minimal element memenuhi layar device meskipun tidak ada element di dalamnya.
+    */
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    /*
+        Property "position: block;" digunakan agar element Footer tidak bertumpuk
+        dengan element lain yang ada di dalam body.
+    */
+    position: block;
+    /*
+        ukuran margin bottom disesuaikan atau disamakan dengan tinggi Footer
+    */
+}
 
 .main {
     box-sizing: border-box;
@@ -75,9 +94,8 @@
 
 .content-2-4 .btn-card {
     font: 700 1rem/1.5rem Poppins, sans-serif;
-    color: #000000;
-    background-image: linear-gradient(rgba(208, 254, 123, 1),
-            rgba(163, 252, 158, 1));
+    color: #ffffff;
+    background-image: linear-gradient(293.57deg, #0d3030 0%, #0d3030 23.8%, #0d3030 42.57%, #0d3030 63.76%, #0d3030 69.62%);
     padding-top: 1rem;
     padding-bottom: 1rem;
     width: 100%;
@@ -87,16 +105,16 @@
 }
 
 .content-2-4 .btn-card:hover {
-    color: #000000;
-    --tw-shadow: inset 0 0px 18px 0 rgba(0, 0, 0, 0.7);
-    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    color: #f1e1e1;
+    --tw-shadow: inset 0 0px 18px 0 rgb(56, 84, 65);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(255, 255, 255, 0)),
         var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .content-2-4 .btn-outline {
     font: 400 1rem/1.5rem Poppins, sans-serif;
-    color: #47475c;
-    border: 1px solid #47475c;
+    color: #e0dcdc;
+    border: 1px solid #000000;
     padding-top: 1rem;
     padding-bottom: 1rem;
     width: 100%;
@@ -115,71 +133,4 @@
 
 .content-2-4 .grid-padding {
     padding: 0rem 1rem 3rem;
-}
-
-/* Footer */
-body footer {
-    background: linear-gradient(293.57deg, #114E4E 0%, #052D2D 23.8%, #041111 42.57%, #000909 63.76%, #000909 69.62%);
-    color: #EEEEEE;
-    padding-top: 72px !important;
-    padding-bottom: 36px !important;
-}
-
-body footer h5 {
-    font-weight: 600 !important;
-    size: 16px !important;
-    line-height: 150%;
-    color: #ECF1F4;
-}
-
-body footer .address p {
-    font-weight: 400 !important;
-    size: 16px !important;
-    line-height: 150%;
-    color: #ECF1F4;
-}
-
-body footer .nav-footer p {
-    font-weight: 700 !important;
-    size: 16px !important;
-    line-height: 150%;
-    color: #ECF1F4;
-}
-
-body footer .nav-footer a {
-    font-weight: 400 !important;
-    size: 16px !important;
-    color: #ECF1F4;
-}
-
-body footer li {
-    margin-bottom: 12px;
-}
-
-body footer .social-media a {
-    margin-right: 10px;
-    text-decoration: none;
-}
-
-body footer .copyright {
-    margin-top: 76px;
-    padding-top: 36px;
-}
-
-body footer .copyright p {
-    font-weight: 400 !important;
-    size: 16px !important;
-    color: #ECF1F4;
-}
-
-body .cl-light {
-    color: #EEEEEE;
-}
-
-body .cl-light-grey-2 {
-    color: #90BCB7;
-}
-
-body .font-lora {
-    font-family: 'Lora', sans-serif !important;
 }
