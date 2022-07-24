@@ -2,6 +2,7 @@ import HomeNav from "../components/navbar/HomeNav";
 import axios from 'axios';
 import "../assets/game/css/bootstrap.min.css"
 import React from "react";
+import Footer from "../components/Footer/Footer";
 
 
 
@@ -57,6 +58,7 @@ class Players extends React.Component {
                         </tbody>
                     </table>
                 </div>
+                <Footer />
             </>
         )
     }

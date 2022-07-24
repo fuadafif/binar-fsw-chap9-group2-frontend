@@ -4,10 +4,10 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { FaFacebookF, FaTwitter, FaGoogle } from "react-icons/fa";
-
+import Navbar from "../components/navbar/RegistLoginNav";
+import Logo from "../assets/login/img/li-logo-2.png";
 import "../assets/login/css/Login.css";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
-import Logo from "../assets/login/img/li-logo-2.png";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -18,7 +18,7 @@ function Login() {
     const isAuthenticated = localStorage.getItem("isAuthenticated");
     const emailKey = localStorage.getItem("email");
 
-    isAuthenticated ? alert("User already login") : alert("Please login first");
+    isAuthenticated ? alert("User already login") : navigate('/login');
 
     if (isAuthenticated && emailKey) {
       navigate("/home");
@@ -45,6 +45,7 @@ function Login() {
 
   return (
     <div className="vh-100 section-css">
+      <Navbar />
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col col-xl-10">

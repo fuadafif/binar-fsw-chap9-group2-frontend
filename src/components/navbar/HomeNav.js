@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Navbar, NavbarBrand, Nav, NavLink, NavItem } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 
@@ -22,18 +22,7 @@ function HomeNav() {
           Team TWO
         </NavbarBrand>
         {/* Nav */}
-        <Nav pills>
-          <NavItem>
-            <NavLink
-              href="#"
-              onClick={() => {
-                navigate("/");
-              }}
-              activeStyle
-            >
-              Landing Page
-            </NavLink>
-          </NavItem>
+        <Nav>
           <NavItem>
             <NavLink
               href="#"
