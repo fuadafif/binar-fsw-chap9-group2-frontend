@@ -3,11 +3,11 @@ import { FaFacebookF, FaTwitter, FaGoogle } from "react-icons/fa";
 
 function HomeNav() {
   return (
-    <footer class="footer">
-      <div class="container">
-        <div class="row">
+    <footer className="footer">
+      <div className="container">
+        <div className="row">
           {/* about us */}
-          <div class="footer-col">
+          <div className="footer-col">
             <h4>company</h4>
             <ul>
               <li>
@@ -16,7 +16,7 @@ function HomeNav() {
             </ul>
           </div>
           {/* get help */}
-          <div class="footer-col">
+          <div className="footer-col">
             <h4>get help</h4>
             <ul>
               <li>
@@ -25,9 +25,9 @@ function HomeNav() {
             </ul>
           </div>
           {/* social links */}
-          <div class="footer-col">
+          <div className="footer-col">
             <h4>follow us</h4>
-            <div class="social-links">
+            <div className="social-links">
               <a href="https://www.facebook.com/" type="button">
                 <FaFacebookF />{" "}
               </a>

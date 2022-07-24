@@ -24,6 +24,10 @@ ul {
 .footer {
   background-color: #24262b;
   padding-top: 3em;
+  position: absolute;
+  bottom: 0; 
+  left: 0;
+  right: 0;
 }
 .footer-col {
   width: 25%;
