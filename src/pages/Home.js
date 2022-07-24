@@ -37,6 +37,10 @@ function Home() {
     navigate('/home');
   }
 
+  function login() {
+    navigate('/login');
+  }
+
   return (
     <div>
       <HomeNav />
@@ -45,6 +49,7 @@ function Home() {
         <br />
         <h2 id="name"></h2>
         <button onClick={logout} className="btn btn-danger" id="logout" hidden>Logout</button>
+        <button onClick={login} className="btn btn-primary" id="login" hidden>Login</button>
       </div>
 
 

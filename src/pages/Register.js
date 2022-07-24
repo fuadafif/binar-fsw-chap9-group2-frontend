@@ -4,14 +4,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { FaFacebookF, FaTwitter, FaGoogle } from "react-icons/fa";
+import Logo from "../assets/login/img/li-logo-2.png";
 
 import "../assets/register/css/Register.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-import Logo2 from "../assets/login/img/li-logo-2.png";
-
 function Register() {
-  const [tampil, setTampil] = useState(false);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -32,10 +30,6 @@ function Register() {
 
   function submit(event) {
     event.preventDefault();
-    setTampil(true);
-    setUsername(document.getElementById("username").value);
-    setEmail(document.getElementById("email").value);
-    setPassword(document.getElementById("password").value);
 
     if (event) {
       alert("Register successful");
@@ -51,9 +45,9 @@ function Register() {
             <div className="card card-css">
               <div className="row g-0">
                 <div className="col-md-6 col-lg-5 d-none d-md-block">
-                  <img src={Logo2} alt="login form" className="img-fluid img-f-css" />
+                  <img src={Logo} alt="login form" className="img-fluid img-f-css" />
                 </div>
-                <div className="col-md-6 col-lg-7 d-flex align-items-center">
+                <div className="col-md-6 col-lg-7 d-flex align-items-center bg">
                   <div className="card-body p-4 p-lg-5 text-black">
                     <Form inline onSubmit={submit}>
                       <div className="d-flex align-items-center mb-3 pb-1">
