@@ -16,13 +16,14 @@ function Home() {
     const emailKey = localStorage.getItem("email");
     const name = document.getElementById('name');
     const logoutButton = document.getElementById("logout");
+    const loginButton = document.getElementById("login");
     if (emailKey) {
       name.innerHTML = `Hi!! ${emailKey}`;
       logoutButton.hidden = false;
     } else {
       name.innerHTML = `Welcome`;
       logoutButton.hidden = true;
-
+      loginButton.hidden = false;
     }
   });
 
