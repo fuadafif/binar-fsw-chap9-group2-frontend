@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Navbar, NavbarBrand, Nav, NavLink, NavItem } from "reactstrap";
 import { useNavigate } from "react-router-dom";
 import "./LandingNav.css"
