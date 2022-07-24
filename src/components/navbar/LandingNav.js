@@ -29,6 +29,17 @@ function LandingNav() {
 						<NavLink
 							href="#"
 							onClick={() => {
+								navigate("/home");
+							}}
+							activeStyle
+						>
+							Home
+						</NavLink>
+					</NavItem>
+					<NavItem>
+						<NavLink
+							href="#"
+							onClick={() => {
 								navigate("/register");
 							}}
 							activeStyle
