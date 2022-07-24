@@ -7,7 +7,6 @@ import fornite from "../assets/landing/img/fornite.jpg";
 import Footer from "../components/Footer/Footer";
 
 
-
 function LandingPage() {
   return (
     <>
@@ -30,9 +29,9 @@ function LandingPage() {
       <div className="main">
         <div className="content-2-4 container-xxl mx-auto p-0 position-relative ">
           <div className="text-center title-text">
-            <h1 className="text-title text-white">3 Keys Benefit</h1>
+            <h1 className="text-title text-white">3 Reasons To Play It</h1>
             <p className="text-caption">
-              You can easily manage your business with a powerful tools
+            You will get an amazing gaming experience:
             </p>
           </div>
           <div className="grid-padding text-center">
@@ -45,8 +44,7 @@ function LandingPage() {
                 </div>
                 <h3 className="icon-title text-white">Easy to Operate</h3>
                 <p className="icon-caption">
-                  This can easily help you to<br />
-                  grow up your business fast
+                  Easily access games<br />
                 </p>
               </div>
               <div className="col-lg-4 column">
@@ -54,10 +52,10 @@ function LandingPage() {
                   <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-12.png"
                     alt="" />
                 </div>
-                <h3 className="icon-title text-white">Real-Time Analytic</h3>
+                <h3 className="icon-title text-white">Light</h3>
                 <p className="icon-caption">
-                  With real-time analytics, you<br />
-                  can check data in real time
+                With the lightness of the game,<br />
+                you will get a smooth gaming experience
                 </p>
               </div>
               <div className="col-lg-4 column">
@@ -65,10 +63,10 @@ function LandingPage() {
                   <img src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-13.png"
                     alt="" />
                 </div>
-                <h3 className="icon-title text-white">Very Full Secured</h3>
+                <h3 className="icon-title text-white">Free</h3>
                 <p className="icon-caption">
-                  With real-time analytics, we<br />
-                  will guarantee your data
+                Enjoy a variety of games that<br />
+                interest you for free
                 </p>
               </div>
             </div>
@@ -78,22 +76,22 @@ function LandingPage() {
               <div className="d-flex flex-lg-row flex-column align-items-center">
                 <div className="me-lg-3">
                   <img
-                    src="http://api.elements.buildwithangga.com/storage/files/2/assets/Content/Content2/Content-2-1%20(1).png"
-                    alt="" />
+                    src="gaming.jpg"
+                    alt="Logo"
+                    width={100} />
                 </div>
                 <div className="flex-grow-1 text-lg-start text-center card-text">
                   <h3 className="card-title text-white">
-                    Fast Business Management in 30 minutes
+                  Team T2
                   </h3>
                   <p className="card-caption">
-                    Our tools for business analysis helps an organization
-                    understand<br className="d-none d-lg-block " />
-                    market or business development.
+                  Team T2 is Indonesian game developer company that has been active since July 2020, <br/> with team consisting of passionate people.
+                  <br className="d-none d-lg-block " />
+                  A game studio that provides a variety of games with various genres. 
                   </p>
                 </div>
                 <div className="card-btn-space">
-                  <button className="btn btn-card">Buy Now</button>
-                  <button className="btn btn-outline">Demo Version</button>
+                  <button className="btn btn-card">SEE MORE</button>
                 </div>
               </div>
             </div>

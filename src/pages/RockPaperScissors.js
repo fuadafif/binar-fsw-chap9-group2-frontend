@@ -17,6 +17,7 @@ function RockPaperScissors() {
   useEffect(() => {
     const isAuthenticated = localStorage.getItem("isAuthenticated");
     if (!isAuthenticated) {
+      alert("Please login first!")
       navigate("/login");
     }
   });

@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { Form, FormGroup, Label, Input, Button } from "reactstrap";
 import { FaFacebookF, FaTwitter, FaGoogle } from "react-icons/fa";
 import Logo from "../assets/login/img/li-logo-2.png";
+import Navbar from "../components/navbar/RegistLoginNav";
 
 import "../assets/register/css/Register.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -39,6 +40,7 @@ function Register() {
 
   return (
     <div className="vh-100 section-css">
+      <Navbar />
       <div className="container py-5 h-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col col-xl-10">
