@@ -150,6 +150,7 @@ function Home() {
             <p className="card-text">
               The goal of the game is to prevent the blocks from stacking up to the top of the screen for as long as possible.
               <br />
+              <br />
             </p>
             <a href="/home" class="btn btn-primary">
               Play Now
