@@ -16,13 +16,14 @@ function Home() {
     const emailKey = localStorage.getItem("email");
     const name = document.getElementById('name');
     const logoutButton = document.getElementById("logout");
+    const loginButton = document.getElementById("login");
     if(emailKey) {
       name.innerHTML = `Hi!! ${emailKey}`;
       logoutButton.hidden = false;
     } else {
       name.innerHTML = `Welcome`;
       logoutButton.hidden = true;
-
+      loginButton.hidden = false;
     }
   });
 
@@ -36,6 +37,10 @@ function Home() {
     navigate('/home');
   }
 
+  function login() {
+    navigate('/login');
+  }
+
   return (
     <div>
       <HomeNav />
@@ -44,6 +49,7 @@ function Home() {
         <br />
         <h2 id="name"></h2>
         <button onClick={logout} className="btn btn-danger" id="logout" hidden>Logout</button>
+        <button onClick={login} className="btn btn-primary" id="login" hidden>Login</button> 
       </div>
 
 
