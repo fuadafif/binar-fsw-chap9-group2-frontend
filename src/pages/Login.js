@@ -7,8 +7,7 @@ import { FaFacebookF, FaTwitter, FaGoogle } from "react-icons/fa";
 
 import "../assets/login/css/Login.css";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
-import Logo1 from "../assets/login/img/li-logo-1.png";
-import Logo2 from "../assets/login/img/li-logo-2.png";
+import Logo from "../assets/login/img/li-logo-2.png";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -52,7 +51,7 @@ function Login() {
             <div className="card card-css">
               <div className="row g-0">
                 <div className="col-md-6 col-lg-5 d-none d-md-block">
-                  <img src={Logo2} alt="login form" className="img-fluid img-f-css" />
+                  <img src={Logo} alt="login form" className="img-fluid img-f-css" />
                 </div>
                 <div className="col-md-6 col-lg-7 d-flex align-items-center">
                   <div className="card-body p-4 p-lg-5 text-black">

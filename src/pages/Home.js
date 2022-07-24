@@ -1,12 +1,12 @@
-
-// import { Img } from "reactstrap";
-
 import HomeNav from "../components/navbar/HomeNav"
 import Footer from "../components/Footer/Footer";
-import "./home-assets/css/Home.css";
+import "../assets/home/css/Home.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import RPSGame from "../assets/home/img/rock-paper-scissors.jpg";
 import SnakeGame from "../assets/home/img/snake-game.jpg";
+import { useNavigate } from 'react-router-dom';
+import { useEffect } from 'react';
+import PicProfile from '../assets/home/img/pic-profile.png';
 
 function Home() {
 
@@ -39,9 +39,12 @@ function Home() {
   return (
     <div>
       <HomeNav />
-
-      <img src="./home-assets/img/player.png" alt="profile picture"></img>
-      <h5>Username</h5>
+      <div className="text-center">
+        <img src={PicProfile} alt="profile pic" className="profile"></img>
+        <br />
+        <h2 id="name"></h2>
+        <button onClick={logout} className="btn btn-danger" id="logout" hidden>Logout</button>
+      </div>
 
 
       <hr />

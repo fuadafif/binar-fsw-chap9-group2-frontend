@@ -1,10 +1,9 @@
 import React from "react";
-import { Card, Container, Col, Row, CardHeader, CardBody, CardTitle, CardText } from "reactstrap";
+import { Card, CardImg } from "reactstrap";
 import LandingNav from "../components/navbar/LandingNav";
-
-import "./landing-assets/css/Landing.css"
-import './game-assets/css/bootstrap.min.css';
-import fornite from "./landing-assets/img/fornite.jpg"
+import "../assets/landing/css/Landing.css"
+import '../assets/game/css/bootstrap.min.css';
+import fornite from "../assets/landing/img/fornite.jpg"
 
 
 
