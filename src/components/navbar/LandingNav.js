@@ -84,7 +84,7 @@ function LandingNav() {
 							id="loginUser"
 							href="#"
 							onClick={() => {
-								navigate("/home");
+								navigate("/profile");
 							}}
 							activeStyle
 						>
