@@ -8,13 +8,17 @@ function LandingNav() {
 	useEffect(() => {
 		const emailKey = localStorage.getItem("email");
 		const user = document.getElementById("user");
-		const nav = document.getElementById("nav");
+		const register = document.getElementById("register");
+		const login = document.getElementById("login");
+		const loginUser = document.getElementById("loginUser");
 		if (emailKey) {
-			user.innerHTML = `${emailKey}`
+			loginUser.innerHTML = `${emailKey}`
 			user.hidden = false;
-			nav.hidden = true;
+			register.hidden = true;
+			login.hidden = true;
 		} else {
-			nav.hidden = false;
+			register.hidden = false;
+			login.hidden = false;
 			user.hidden = true;
 		}
 
@@ -41,7 +45,7 @@ function LandingNav() {
 					Team T2
 				</NavbarBrand>
 				{/* Nav */}
-				<div className="test">
+				<Nav>
 					<NavItem>
 						<NavLink
 							href="#"
@@ -53,22 +57,7 @@ function LandingNav() {
 							Home
 						</NavLink>
 					</NavItem>
-					<Nav hidden id="user">
-					<NavItem>
-						<NavLink
-							href="#"
-							onClick={() => {
-								navigate("/home");
-							}}
-							activeStyle
-						>
-						</NavLink>
-					</NavItem>
-					</Nav>
-
-				</div >
-				<Nav hidden id="nav">
-					<NavItem>
+					<NavItem hidden id="register">
 						<NavLink
 							href="#"
 							onClick={() => {
@@ -79,7 +68,7 @@ function LandingNav() {
 							Register
 						</NavLink>
 					</NavItem>
-					<NavItem>
+					<NavItem hidden id="login">
 						<NavLink
 							href="#"
 							onClick={() => {
@@ -90,7 +79,19 @@ function LandingNav() {
 							Login
 						</NavLink>
 					</NavItem>
+					<NavItem hidden id="user">
+						<NavLink
+							id="loginUser"
+							href="#"
+							onClick={() => {
+								navigate("/profile");
+							}}
+							activeStyle
+						>
+						</NavLink>
+					</NavItem>
 				</Nav>
+
 			</Navbar>
 		</>
 	);

@@ -24,7 +24,7 @@ function Home() {
     const logoutButton = document.getElementById("logout");
     const loginButton = document.getElementById("login");
     if (emailKey) {
-      name.innerHTML = `Hi!! ${emailKey}`;
+      name.innerHTML = `Halo ${emailKey}`;
       logoutButton.hidden = false;
     } else {
       name.innerHTML = `Welcome`;
@@ -51,9 +51,11 @@ function Home() {
     <div className="">
       <HomeNav />
       <div className="text-center">
-        <img src={PicProfile} alt="profile pic" className="profile"></img>
+        <a href="/profile">
+          <img src={PicProfile} alt="profile pic" className="profile"></img>
+        </a>
         <br />
-        <h2 id="name"></h2>
+        <h4 id="name"></h4>
         <button onClick={logout} className="btn btn-danger" id="logout" hidden>
           Logout
         </button>

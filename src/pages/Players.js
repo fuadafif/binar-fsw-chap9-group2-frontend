@@ -58,7 +58,6 @@ class Players extends React.Component {
                         </tbody>
                     </table>
                 </div>
-                <Footer />
             </>
         )
     }

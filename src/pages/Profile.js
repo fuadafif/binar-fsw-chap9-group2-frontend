@@ -1,44 +1,44 @@
-import HomeNav from "../components/navbar/HomeNav";
+import Navbar from "../components/navbar/HomeNav";
 import Footer from "../components/Footer/Footer";
-import PicProfile from "../assets/home/img/pic-profile.png";
+import Logo from "../assets/home/img/pic-profile.png";
 import { useEffect } from "react";
-import { Button, Table } from "reactstrap";
 
 function Profile() {
+
   useEffect(() => {
+    const user = document.getElementById("user");
     const emailKey = localStorage.getItem("email");
+
     if (emailKey) {
-      document.getElementById("name").innerHTML = `Hola!! ${emailKey}`;
+      user.innerHTML = `${emailKey}`
     }
-  });
+  })
+
 
   return (
-    <div>
-      <HomeNav />
-      <div className="text-left">
-        <img src={PicProfile} alt="profile pic" className="profile"></img>
-        <br />
-        <h2 id="name"></h2>
+    <div className="vh-100 section-css">
+      <Navbar />
+      <div className="container py-5 h-100">
+        <div className="row d-flex justify-content-center align-items-center h-100">
+          <div className="col col-xl-10">
+            <div className="card card-css">
+              <div className="row g-0">
+                <div className="col-md-6 col-lg-5 d-none d-md-block">
+                  <img src={Logo} alt="login form" className="img-fluid img-f-css" />
+                </div>
+                <div className="col-md-6 col-lg-7 d-flex align-items-center">
+                  <div className="card-body p-4 p-lg-5 text-black">
+                    <h3 className="position-absolute top-0 start-50 translate-middle-x text-body ms-5 mt-5"
+                      id="user"
+                    >
+                    </h3>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div>
-        <Table striped bordered hover size="sm">
-          <tbody>
-            <tr>
-              <th>Username</th>
-              <th>username</th>
-            </tr>
-            <tr>
-              <td>Email</td>
-              <td>email</td>
-            </tr>
-            <tr>
-              <td>City</td>
-              <td>city</td>
-            </tr>
-          </tbody>
-        </Table>
-      </div>
-      <Button>Edit Profile</Button>
       <Footer />
     </div>
   );
