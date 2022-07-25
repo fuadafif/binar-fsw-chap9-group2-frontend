@@ -36,9 +36,11 @@ function Home() {
   function logout() {
     const removeEmail = "email";
     const removeAuth = "isAuthenticated";
+    const score = "SCORE";
     window.confirm("Are you sure want to logout?");
     localStorage.removeItem(removeEmail);
     localStorage.removeItem(removeAuth);
+    localStorage.removeItem(score);
     window.location.reload();
     navigate("/home");
   }

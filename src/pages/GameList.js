@@ -1,5 +1,4 @@
 import HomeNav from "../components/navbar/HomeNav";
-import Footer from "../components/Footer/Footer";
 import { Container, ListGroup, ListGroupItem } from 'reactstrap';
 
 function GameList() {
@@ -10,7 +9,9 @@ function GameList() {
       <Container>
         <ListGroup>
           <ListGroupItem active tag="button" action>Game list</ListGroupItem>
-          <ListGroupItem tag="button" action>Rock Paper Scissors</ListGroupItem>
+          <ListGroupItem tag="button" action>
+            <a className="text-body text-decoration-none" href="/play-game">Rock Paper Scissors</a>
+            </ListGroupItem>
           <ListGroupItem disabled tag="button" action>Snake</ListGroupItem>
           <ListGroupItem disabled tag="button" action>Chess</ListGroupItem>
           <ListGroupItem disabled tag="button" action>Solitaire</ListGroupItem>
